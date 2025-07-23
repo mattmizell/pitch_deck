@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: bde-pitch-deck
+    env: static
+    buildCommand: "" # No build needed for static HTML
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+    routes:
+      - type: rewrite
+        source: /
+        destination: /pitch_deck.html
