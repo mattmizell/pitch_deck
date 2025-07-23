@@ -1,0 +1,179 @@
+[
+  {
+    "slide_number": 1,
+    "slide_file": "ppt/slides/slide1.xml",
+    "texts": [
+      "Building the first AI-driven energy company on the planet"
+    ]
+  },
+  {
+    "slide_number": 2,
+    "slide_file": "ppt/slides/slide2.xml",
+    "texts": [
+      "Context: Why Better Day Must Be Different",
+      "To deliver a Better Day, we must break from the petroleum industry status quo.",
+      "We'll take market share by:",
+      "Smart and rapid capital deployment",
+      "Better marketing & customer experience",
+      "Operational efficiency powered by AI",
+      "Goal: Frictionless service at infinite scale",
+      "without growing overhead",
+      "."
+    ]
+  },
+  {
+    "slide_number": 3,
+    "slide_file": "ppt/slides/slide3.xml",
+    "texts": [
+      "The Response: Build It Ourselves",
+      "In 2022, Rooster began developing our own platform through",
+      "International Tech Styles (ITS)",
+      ".",
+      "Off-shore team led development—",
+      "low-cost and high-quality",
+      ", but",
+      "slow-moving and disconnected",
+      "from day-to-day operations."
+    ]
+  },
+  {
+    "slide_number": 4,
+    "slide_file": "ppt/slides/slide4.xml",
+    "texts": [
+      "Enter: Matt Mizell",
+      "Former CIO at DuPont and Laird Technologies.",
+      "Brought on to solve an email parsing issue and to look at our systems stack.",
+      "Deep experience in AI, automation, and enterprise systems."
+    ]
+  },
+  {
+    "slide_number": 5,
+    "slide_file": "ppt/slides/slide5.xml",
+    "texts": [
+      "Matt Mizell - Bio",
+      "Matt Mizell is a proven technology executive with a track record of building and transforming global platforms. As former",
+      "Chief Information Officer",
+      "at",
+      "Laird Technologies",
+      "and",
+      "Laird Performance Materials",
+      "for over a decade, Matt led global IT operations across 35+ sites with a $15M+ budget, executed multiple M&A carve-outs, and architected systems later acquired by",
+      "DuPont",
+      "and",
+      "Molex",
+      ".",
+      "AI-First Operator",
+      ": Now leveraging AI to build and deploy software 10x faster, integrate edge devices (e.g., tank monitors), and solve real-world operations challenges.",
+      "Entrepreneurial Leader",
+      ": Invested in and led multiple tech ventures,both internally in Laird and in high-tech startups.",
+      "M&A Veteran",
+      ": Deep experience on both buy-side and sell-side of deals, including managing due diligence, carve-outs, and TSAs.",
+      "Field Impact",
+      ": Has deployed automated pricing systems, real-time fuel monitoring, and sales enablement tools—reducing costs and accelerating decision-making at Better Day.",
+      "Global Experience",
+      ": Lived and worked in",
+      "Hong Kong",
+      ",",
+      "India",
+      ",",
+      "UK",
+      ", and across the",
+      "U.S.",
+      ", managing international development teams and executing scalable strategies.",
+      "Education",
+      ":",
+      "M.S., Communication, Southern Illinois University",
+      "B.S., Mass Media, Bob Jones University",
+      "Executive Training at",
+      "Harvard Business School",
+      "and",
+      "Boston University"
+    ]
+  },
+  {
+    "slide_number": 6,
+    "slide_file": "ppt/slides/slide6.xml",
+    "texts": [
+      "Agentic",
+      "AI Changed the Equation",
+      "AI radically accelerates development and deployment.",
+      "Matt leverages AI plus third-party managed cloud stacks to:",
+      "Build software tools in days, not months.",
+      "Roll out hardware (e.g., tank monitors) to field sites.",
+      "Automate data workflows and connect siloed systems."
+    ]
+  },
+  {
+    "slide_number": 7,
+    "slide_file": "ppt/slides/slide7.xml",
+    "texts": [
+      "The Misalignment",
+      "Matt is solving ITS’s platform issues while simultaneously solving Better Day’s field ops problems.",
+      "But",
+      "ITS and Better Day are separate entities",
+      ", creating friction and inefficiency.",
+      "Two companies, one strategy—but split ownership and incentives.",
+      "Better Day should own and control its digital IP"
+    ]
+  },
+  {
+    "slide_number": 8,
+    "slide_file": "ppt/slides/slide8.xml",
+    "texts": [
+      "Proof: Tangible Wins in the Field",
+      "Live Veeder Root tank monitors deployed with centralized polling, predictive analytics and alerting.",
+      "Fully functional pricing parser integrating AI and email automation.",
+      "CRM integration and onboarding automation in development."
+    ]
+  },
+  {
+    "slide_number": 9,
+    "slide_file": "ppt/slides/slide9.xml",
+    "texts": [
+      "Solution: Share-Based Acquisition",
+      "Better Day Energy acquires ITS",
+      "via equity—",
+      "no cash exchanged",
+      ".",
+      "Issue",
+      "75,000 new shares",
+      "to complete acquisition.",
+      "Consolidates IP, platform, and technical leadership.",
+      "Matt receives 10% equity stake",
+      "in BDE through this transaction.",
+      "Rooster (investor in ITS) is compensated for 3 years of early investment."
+    ]
+  },
+  {
+    "slide_number": 10,
+    "slide_file": "ppt/slides/slide10.xml",
+    "texts": [
+      "Deliverables from Acquisition",
+      "Full control of pricing, delivery, CRM, and reporting platforms.",
+      "Access to Matt’s fundraising network and technology partners.",
+      "Defined roadmap for onshore AI development + offshore support.",
+      "Tighter control over our",
+      "digital",
+      "IP"
+    ]
+  },
+  {
+    "slide_number": 11,
+    "slide_file": "ppt/slides/slide11.xml",
+    "texts": [
+      "Technology Roadmap"
+    ]
+  },
+  {
+    "slide_number": 12,
+    "slide_file": "ppt/slides/slide12.xml",
+    "texts": [
+      "The Outcome",
+      "A tech-enabled Better Day Energy:",
+      "Onshore, AI-driven innovation",
+      "Offshore, cost-effective stability",
+      "Rapid development, deployment, and iteration",
+      "Strategic alignment across platform, operations, and ownership"
+    ]
+  }
+]

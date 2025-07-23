@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Day Energy - Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background-color: #2a2a2a;
+            border-radius: 12px;
+            padding: 60px;
+            margin-bottom: 40px;
+            min-height: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Slide 1 - Title Slide */
+        .slide-1 {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 700px;
+        }
+        
+        .slide-1 h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .slide-1 .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .slide-1 img {
+            max-height: 120px;
+            width: auto;
+        }
+        
+        /* Content Slides */
+        .slide h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #4a9eff;
+        }
+        
+        .slide h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #66b3ff;
+        }
+        
+        .slide p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .slide ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .slide li {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .slide li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4a9eff;
+            font-size: 24px;
+        }
+        
+        /* Image layouts */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .slide a img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(74, 158, 255, 0.5);
+        }
+        
+        .slide-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Special styling for bio slide */
+        .bio-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .bio-content strong {
+            color: #4a9eff;
+            font-weight: 600;
+        }
+        
+        .education-section {
+            background-color: rgba(74, 158, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        /* Roadmap slide */
+        .roadmap-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        
+        /* Timeline styles */
+        .timeline-container {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            max-height: 600px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #4a9eff 0%, #66b3ff 50%, #88c5ff 100%);
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-items {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            text-align: left;
+        }
+        
+        .timeline-date {
+            background: #2a2a2a;
+            border: 3px solid #4a9eff;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        
+        .timeline-item.completed .timeline-date {
+            background: #4a9eff;
+            color: #1a1a1a;
+        }
+        
+        .timeline-item.completed .timeline-date::after {
+            content: "✓";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #00ff00;
+            color: #1a1a1a;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,255,0,0.5);
+        }
+        
+        .timeline-content {
+            background: rgba(42, 42, 42, 0.8);
+            border: 1px solid #4a9eff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 40%;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            margin-left: 55%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 55%;
+        }
+        
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background: #4a9eff;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -20px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -20px;
+        }
+        
+        .timeline-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a9eff;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-items-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .timeline-items-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-items-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #66b3ff;
+        }
+        
+        .timeline-item.completed .timeline-items-list li:before {
+            content: "✓";
+            color: #00ff00;
+        }
+        
+        /* Responsive timeline */
+        @media (max-width: 1200px) {
+            .timeline-content {
+                width: 35%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-date {
+                left: 30px;
+                width: 60px;
+                height: 60px;
+                font-size: 12px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                text-align: left !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 100px);
+                margin-left: 100px !important;
+                margin-right: auto !important;
+            }
+            
+            .timeline-content::before {
+                left: -20px !important;
+                right: auto !important;
+            }
+        }
+        
+        /* Emphasis text */
+        .emphasis {
+            color: #ffcc00;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background-color: rgba(74, 158, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background-color: rgba(42, 42, 42, 0.9);
+            padding: 15px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .nav-button {
+            background-color: #4a9eff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #66b3ff;
+            transform: translateY(-2px);
+        }
+        
+        .nav-button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+            
+            .slide h1 {
+                font-size: 32px;
+            }
+            
+            .slide h2 {
+                font-size: 28px;
+            }
+            
+            .slide p, .slide li {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide slide-1" id="slide-1">
+            <span class="slide-number">1 / 12</span>
+            <div class="slide-content">
+                <h1>Building the first AI-driven energy company on the planet</h1>
+                <div class="logo-container">
+                    <img src="extracted_images/image7.png" alt="Better Day Energy Logo">
+                    <img src="extracted_images/image11.png" alt="Company Logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Context -->
+        <div class="slide" id="slide-2">
+            <span class="slide-number">2 / 12</span>
+            <div class="slide-content">
+                <h2>Context: Why Better Day Must Be Different</h2>
+                <p><strong>To deliver a Better Day, we must break from the petroleum industry status quo.</strong></p>
+                
+                <h3>We'll take market share by:</h3>
+                <ul>
+                    <li>Smart and rapid capital deployment</li>
+                    <li>Better marketing & customer experience</li>
+                    <li>Operational efficiency powered by AI</li>
+                </ul>
+                
+                <p style="margin-top: 40px; font-size: 24px;"><strong>Goal:</strong> <span class="emphasis">Frictionless service at infinite scale without growing overhead.</span></p>
+                
+                <div class="image-container">
+                    <img src="extracted_images/image9.png" alt="Context Visual" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Response -->
+        <div class="slide" id="slide-3">
+            <span class="slide-number">3 / 12</span>
+            <div class="slide-content">
+                <h2>The Response: Build It Ourselves</h2>
+                <p>In 2022, Rooster began developing our own platform through <strong>International Tech Styles (ITS)</strong>.</p>
+                
+                <p style="margin-top: 30px;">Off-shore team led development—<span class="highlight">low-cost and high-quality</span>, but <span class="emphasis">slow-moving and disconnected</span> from day-to-day operations.</p>
+                
+                <div class="image-grid" style="margin-top: 40px;">
+                    <img src="extracted_images/image10.png" alt="Development Process" style="transform: scale(1.25);">
+                    <img src="extracted_images/image4.png" alt="Platform Architecture" style="transform: scale(1.25);">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Enter Matt Mizell -->
+        <div class="slide" id="slide-4">
+            <span class="slide-number">4 / 12</span>
+            <div class="slide-content">
+                <h2>Enter: Matt Mizell</h2>
+                <ul>
+                    <li>Former CIO at DuPont and Laird Technologies.</li>
+                    <li>Brought on to solve an email parsing issue and to look at our systems stack.</li>
+                    <li>Deep experience in AI, automation, and enterprise systems.</li>
+                </ul>
+                
+                <div class="image-grid" style="margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+                    <img src="extracted_images/image6.png" alt="Matt Mizell" style="transform: scale(1.1);">
+                    <img src="extracted_images/image16.png" alt="Experience 1">
+                    <img src="extracted_images/image15.png" alt="Experience 2">
+                    <img src="extracted_images/image3.png" alt="Experience 3">
+                    <img src="extracted_images/image17.png" alt="Experience 4">
+                    <img src="extracted_images/image14.png" alt="Experience 5">
+                    <img src="extracted_images/image2.png" alt="Experience 6">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Matt Mizell Bio -->
+        <div class="slide" id="slide-5">
+            <span class="slide-number">5 / 12</span>
+            <div class="slide-content bio-content">
+                <h2>Matt Mizell - Bio</h2>
+                <p>Matt Mizell is a proven technology executive with a track record of building and transforming global platforms. As former <strong>Chief Information Officer</strong> at <strong>Laird Technologies</strong> and <strong>Laird Performance Materials</strong> for over a decade, Matt led global IT operations across 35+ sites with a $15M+ budget, executed multiple M&A carve-outs, and architected systems later acquired by <strong>DuPont</strong> and <strong>Molex</strong>.</p>
+                
+                <ul style="margin-top: 30px;">
+                    <li><strong>AI-First Operator</strong>: Now leveraging AI to build and deploy software 10x faster, integrate edge devices (e.g., tank monitors), and solve real-world operations challenges.</li>
+                    <li><strong>Entrepreneurial Leader</strong>: Invested in and led multiple tech ventures, both internally in Laird and in high-tech startups.</li>
+                    <li><strong>M&A Veteran</strong>: Deep experience on both buy-side and sell-side of deals, including managing due diligence, carve-outs, and TSAs.</li>
+                    <li><strong>Field Impact</strong>: Has deployed automated pricing systems, real-time fuel monitoring, and sales enablement tools—reducing costs and accelerating decision-making at Better Day.</li>
+                    <li><strong>Global Experience</strong>: Lived and worked in Hong Kong, India, UK, and across the U.S., managing international development teams and executing scalable strategies.</li>
+                </ul>
+                
+                <div class="education-section">
+                    <h3>Education:</h3>
+                    <ul>
+                        <li>M.S., Communication, Southern Illinois University</li>
+                        <li>B.S., Mass Media, Bob Jones University</li>
+                        <li>Executive Training at Harvard Business School and Boston University</li>
+                    </ul>
+                </div>
+                
+                <div class="image-grid" style="margin-top: 30px;">
+                    <img src="extracted_images/image19.png" alt="Achievement 1">
+                    <img src="extracted_images/image12.png" alt="Achievement 2">
+                    <img src="extracted_images/image5.png" alt="Achievement 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Agentic AI -->
+        <div class="slide" id="slide-6">
+            <span class="slide-number">6 / 12</span>
+            <div class="slide-content">
+                <h2><span class="emphasis">Agentic</span> AI Changed the Equation</h2>
+                <p style="font-size: 24px; margin-bottom: 40px;">AI radically accelerates development and deployment.</p>
+                
+                <h3>Matt leverages AI plus third-party managed cloud stacks to:</h3>
+                <ul>
+                    <li>Build software tools in days, not months.</li>
+                    <li>Roll out hardware (e.g., tank monitors) to field sites.</li>
+                    <li>Automate data workflows and connect siloed systems.</li>
+                </ul>
+                
+                <div class="image-container" style="margin-top: 40px;">
+                    <img src="extracted_images/image1.png" alt="AI Integration" style="max-width: 500px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: The Misalignment -->
+        <div class="slide" id="slide-7">
+            <span class="slide-number">7 / 12</span>
+            <div class="slide-content">
+                <h2>The Misalignment</h2>
+                <p>Matt is solving ITS's platform issues while simultaneously solving Better Day's field ops problems.</p>
+                
+                <p style="margin-top: 30px;"><strong>But</strong> <span class="emphasis">ITS and Better Day are separate entities</span>, creating friction and inefficiency.</p>
+                
+                <ul style="margin-top: 30px;">
+                    <li>Two companies, one strategy—but split ownership and incentives.</li>
+                    <li><strong>Better Day should own and control its digital IP</strong></li>
+                </ul>
+                
+                <div class="image-grid" style="margin-top: 40px;">
+                    <img src="extracted_images/image21.jpg" alt="Misalignment Visual">
+                    <img src="extracted_images/image11.png" alt="Company Structure">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Proof -->
+        <div class="slide" id="slide-8">
+            <span class="slide-number">8 / 12</span>
+            <div class="slide-content">
+                <h2>Proof: Tangible Wins in the Field</h2>
+                <ul>
+                    <li>Live Veeder Root tank monitors deployed with centralized polling, predictive analytics and alerting.</li>
+                    <li>Fully functional pricing parser integrating AI and email automation.</li>
+                    <li>CRM integration and onboarding automation in development.</li>
+                </ul>
+                
+                <div class="image-grid" style="margin-top: 40px; grid-template-columns: 2fr 1fr; align-items: center;">
+                    <a href="https://bdetankmon.netlify.app/" target="_blank" style="display: block;">
+                        <img src="extracted_images/image8.png" alt="Tank Monitor System" style="width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease;">
+                    </a>
+                    <img src="extracted_images/image18.png" alt="Analytics Dashboard">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Solution -->
+        <div class="slide" id="slide-9">
+            <span class="slide-number">9 / 12</span>
+            <div class="slide-content">
+                <h2>Solution: Share-Based Acquisition</h2>
+                <p>Better Day Energy acquires ITS <span class="emphasis">via equity—no cash exchanged</span>.</p>
+                
+                <ul style="margin-top: 30px;">
+                    <li>Issue <strong>75,000 new shares</strong> to complete acquisition.</li>
+                    <li>Consolidates IP, platform, and technical leadership.</li>
+                    <li>Matt receives <strong>10% equity stake</strong> in BDE through this transaction.</li>
+                    <li>Rooster (investor in ITS) is compensated for 3 years of early investment.</li>
+                </ul>
+                
+                <div class="image-container" style="margin-top: 40px;">
+                    <img src="extracted_images/image20.jpg" alt="Acquisition Structure" style="max-width: 600px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Deliverables -->
+        <div class="slide" id="slide-10">
+            <span class="slide-number">10 / 12</span>
+            <div class="slide-content">
+                <h2>Deliverables from Acquisition</h2>
+                <ul>
+                    <li>Full control of pricing, delivery, CRM, and reporting platforms.</li>
+                    <li>Access to Matt's fundraising network and technology partners.</li>
+                    <li>Defined roadmap for onshore AI development + offshore support.</li>
+                    <li>Tighter control over our <span class="emphasis">digital IP</span></li>
+                </ul>
+                
+                <div class="image-container" style="margin-top: 40px;">
+                    <img src="extracted_images/image22.jpg" alt="Deliverables Visual" style="max-width: 600px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Technology Roadmap -->
+        <div class="slide" id="slide-11">
+            <span class="slide-number">11 / 12</span>
+            <div class="slide-content">
+                <h2>Technology Roadmap</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-items">
+                        <!-- Q3 2025 - Foundation -->
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">Q3 2025</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Foundation</div>
+                                <ul class="timeline-items-list">
+                                    <li>Launch Real-Time pricing parser (IMAP + Grok AI)</li>
+                                    <li>OPIS and non-OPIS pricing</li>
+                                    <li>Parse pricing 24/7 from top suppliers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Q3 2025 - Intelligent Infrastructure -->
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">Q3 2025</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Intelligent Infrastructure</div>
+                                <ul class="timeline-items-list">
+                                    <li>Deploy Veeder Reader 1.0 to field sites</li>
+                                    <li>Build centralized reporting engine</li>
+                                    <li>Depletion forecasting using historical tank data</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Q4 2025 - Customer Pipeline -->
+                        <div class="timeline-item">
+                            <div class="timeline-date">Q4 2025</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Customer Pipeline & Sales Automation</div>
+                                <ul class="timeline-items-list">
+                                    <li>DocuSeal + LACRM integration for digital onboarding</li>
+                                    <li>CRM-integrated quoting with daily pricing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Q1-Q2 2026 - AI Operations -->
+                        <div class="timeline-item">
+                            <div class="timeline-date">Q1-Q2 2026</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">AI-Driven Operations</div>
+                                <ul class="timeline-items-list">
+                                    <li>Live AI-generated recommendations: Buy/Hold/Sell</li>
+                                    <li>Combine tank + pricing + logistics data</li>
+                                    <li>Expand Veeder Reader Deployment</li>
+                                    <li>Improve central tank monitor</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Q4 2026 - Agentic Orchestration -->
+                        <div class="timeline-item">
+                            <div class="timeline-date">Q4 2026</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Full Agentic Orchestration</div>
+                                <ul class="timeline-items-list">
+                                    <li>Fuel Intelligence Agent (EIA + weather + sentiment)</li>
+                                    <li>Auto-buy triggers and dispatch planning</li>
+                                    <li>Route optimization and delivery prediction</li>
+                                    <li>Dynamic customer communication</li>
+                                    <li>Forecast-based contract offers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Q4+ 2027 - Scale & Monetize -->
+                        <div class="timeline-item">
+                            <div class="timeline-date">Q4+ 2027</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Scale & Monetize</div>
+                                <ul class="timeline-items-list">
+                                    <li>POS integration for local pricing agent</li>
+                                    <li>Tokenized contract trials</li>
+                                    <li>Capital raise for fuel-backed securities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: The Outcome -->
+        <div class="slide" id="slide-12">
+            <span class="slide-number">12 / 12</span>
+            <div class="slide-content">
+                <h2>The Outcome</h2>
+                <p style="font-size: 24px; margin-bottom: 40px;">A tech-enabled Better Day Energy:</p>
+                
+                <ul style="font-size: 24px;">
+                    <li>Onshore, AI-driven innovation</li>
+                    <li>Offshore, cost-effective stability</li>
+                    <li>Rapid development, deployment, and iteration</li>
+                    <li>Strategic alignment across platform, operations, and ownership</li>
+                </ul>
+                
+                <div class="image-grid" style="margin-top: 40px;">
+                    <img src="extracted_images/image23.jpg" alt="Future Vision">
+                    <img src="extracted_images/image7.png" alt="Better Day Energy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-button" onclick="previousSlide()" id="prevBtn">Previous</button>
+        <span id="slideIndicator" style="color: white; font-size: 16px;">1 / 12</span>
+        <button class="nav-button" onclick="nextSlide()" id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function showSlide(n) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                if (slide) {
+                    slide.style.display = 'none';
+                }
+            }
+            
+            // Show current slide
+            const current = document.getElementById(`slide-${n}`);
+            if (current) {
+                current.style.display = 'block';
+            }
+            
+            // Update navigation
+            document.getElementById('slideIndicator').textContent = `${n} / ${totalSlides}`;
+            document.getElementById('prevBtn').disabled = n === 1;
+            document.getElementById('nextBtn').disabled = n === totalSlides;
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>
